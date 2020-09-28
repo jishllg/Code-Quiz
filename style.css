@@ -2,6 +2,11 @@ nav {
     padding: 20px;
 }
 
+section {
+    padding: 20px;
+    text-align: center;
+}
+
 .card-body {
     padding: 11px;
 }
