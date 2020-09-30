@@ -1,10 +1,18 @@
+#timer, #questions, #score-entry, #fail, #success, #submitted {
+    display: none;
+}
+
 nav {
     padding: 20px;
 }
 
-section {
+article, section {
     padding: 20px;
     text-align: center;
+}
+
+form {
+    padding: 60px;
 }
 
 .card-body {
