@@ -12,14 +12,20 @@
     <!-- CSS Specific to this quiz -->
     <link rel="stylesheet" href="style.css">
 
-    <title>Quiz</title>
+    <title>Code Quiz</title>
   </head>
   <body>
     <nav>
-          <a class="btn btn-secondary btn-lg" href="scores.html" role="button">High Scores</a>
+      <div class="card float-right">
+        <div id="timer" class="card-body">
+          Seconds Remaining: 30
         </div>
+      </div>
+      <div>
+        <a id="high-score-button" class="btn btn-secondary btn-lg" href="scores.html">Saved Scores</a>
+      </div>
     </nav>
-    <section>
+    <article id="instructions">
       <h1>
         Coding Quiz
       </h1>
@@ -29,8 +35,59 @@
       <p>
         This quiz will give you 30 seconds to answer all of its questions, but wrong answers will take time off the clock.
       </p>
-      <a class="btn btn-secondary btn-lg" href="quiz.html" role="button">Start</a>
+      <button id="start-button" class="btn btn-secondary btn-lg">Start</button>
+    </article>
+    <section id="questions">
+      <h2 id="question"></h2>
+      <br>
+      <button id="answer-1" class="btn btn-secondary btn-lg"></button>
+      <br><br>
+      <button id="answer-2" class="btn btn-secondary btn-lg"></button>
+      <br><br>
+      <button id="answer-3" class="btn btn-secondary btn-lg"></button>
+      <hr>
+      <h3 id="notification"></h3>
     </section>
+    <article id="fail">
+      <h1>
+        Failure
+      </h1>
+      <p>
+        You may have more studying to do.
+      </p>
+      <button id="retry-button" class="btn btn-secondary btn-lg">Retry</button>
+    </article>
+    <article id="success">
+      <h1>
+        Success
+      </h1>
+      <p>
+        Enter your name below to have your score saved.
+      </p>
+      <button id="retry-button-success" class="btn btn-secondary btn-lg">Retry</button>
+    </article>
+    <form id="score-entry">
+      <hr>
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Score</label>
+        <div class="col-sm-10">
+          <input type="text" readonly class="form-control-plaintext" id="final-score" value="ScoreGoesHere">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Name</label>
+        <div class="col-sm-10">
+          <input class="form-control" id="input-name">
+        </div>
+      </div>
+      <button id="submit" type="button" class="btn btn-secondary btn-lg btn-block">Submit</button>
+    </form>
+    <article id="submitted">
+      <hr>
+      <p>
+        Your score has been recorded.
+      </p>
+    </article>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" 
     crossorigin="anonymous"></script>
@@ -38,5 +95,6 @@
     integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" 
     integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="quiz.js"></script>
   </body>
 </html>
