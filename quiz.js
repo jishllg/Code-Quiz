@@ -2,9 +2,9 @@
 var question1 = ["Which variable type can be used to store words and sentences?", "Integer", "String", "Boolean", "2"];
 var question2 = ["Which variable type can be used to store whole numbers?", "Integer", "String", "Boolean", "1"];
 var question3 = ["Which variable type can be used to store true or false data?", "Integer", "String", "Boolean", "3"];
-var question4 = ["Question 4 has answer 1", "ans1", "ans2", "ans3", "1"];
-var question5 = ["Question 5 has answer 3", "ans1", "ans2", "ans3", "3"];
-var question6 = ["Question 6 has answer 2", "ans1", "ans2", "ans3", "2"];
+var question4 = ["Which delcaration will make a variable globally scoped or function scoped?", "var", "let", "const", "1"];
+var question5 = ["Which declaration will make a variable block scoped and unable to be updated?", "var", "let", "const", "3"];
+var question6 = ["Which declaration will make a variable block scoped and able to be updated?", "var", "let", "const", "2"];
 var quiz = [question1, question2, question3, question4, question5, question6];
 
 // Getting HTML Elements and storing them as variables and initializing other useful variables
@@ -72,12 +72,15 @@ function startQuiz() {
     scoreButton.style.visibility = "hidden";
     questions.style.display = "block";
     timer.style.display = "block";
-    timer.textContent = "Seconds Remaining: 30";
+    timer.textContent = "Seconds Remaining: 60";
 
     // Resetting timer, progress, and notification variables
-    timerInt = 30;
+    timerInt = 60;
     progress = 0;
     notification.textContent = "";
+
+    // Shuffling the quiz array for a randomized question order
+    quiz.sort(function (a, b) { return 0.5 - Math.random() });
 
     // Calling method to display the first question
     renderQuestion();
@@ -103,7 +106,7 @@ function nextQuestion(guess) {
     }
     else {
         notification.textContent = "Incorrect";
-        timerInt = Math.max(timerInt - 5, 0);
+        timerInt = Math.max(timerInt - 20, 0);
         timer.textContent = "Seconds Remaining: " + timerInt.toString();
     }
 
