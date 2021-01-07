@@ -1,5 +1,5 @@
 # Code-Quiz
-Quiz game that uses JavaScript to adjust the HTML structure.
+Quiz game for beginner developers that uses JavaScript to adjust the HTML structure.
 
 # Links
 [Quiz](https://jishllg.github.io/Code-Quiz/)<br>
